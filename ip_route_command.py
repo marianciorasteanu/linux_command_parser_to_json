@@ -1,15 +1,5 @@
 #!/usr/bin/python3
 
-# -*- coding: utf-8 -*-
-#
-# This script along with its template called ip_route.template from parser_templates are owned by Valentin Soare.
-# Licensed under the GNU General Public License, version 3 (GPL-3.0).import json.
-# See the LICENSE file in the root directory for details.
-# The use of this script by the London Stock Exchange does not confer
-# any ownership rights to the employer.
-#
-# Author: Valentin Soare
-
 import argparse
 import json
 import os
@@ -163,10 +153,9 @@ def parse_and_transform() -> None:
     result_from_command_as_a_list_parsed, as_fsm = _parse_input(name_of_file,
                                                                 _take_input_directly_from_iproute_command())
     extracted_result = _extract_output(result_from_command_as_a_list_parsed, as_fsm)
-    output_with_needed_structure: str = generate_output(_validate_output(extracted_result), classic_style=True)
+    output_with_needed_structure: str = generate_output(_validate_output(extracted_result), classic_style=False)
 
     print(output_with_needed_structure)
-
 
 if __name__ == '__main__':
     parse_and_transform()
